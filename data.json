@@ -1,0 +1,33 @@
+{
+  "problems": [
+    { "title": "Fake Solana Tokens", "desc": "Malicious actors deploy counterfeit tokens mimicking legitimate projects, draining unsuspecting users." },
+    { "title": "Rug Pulls & Liquidity Drains", "desc": "Developers remove liquidity without warning, leaving holders with worthless tokens and no recourse." },
+    { "title": "Hidden Mint & Freeze Authorities", "desc": "Undisclosed control mechanisms allow creators to mint unlimited supply or freeze user holdings." },
+    { "title": "Wallet Drain Contracts", "desc": "Malicious smart contracts designed to extract funds from connected wallets during transactions." },
+    { "title": "Transaction Blindness", "desc": "Users sign transactions without understanding the full implications, risks, or hidden permissions." }
+  ],
+  "howItWorks": [
+    { "step": "01", "title": "Read On-Chain Data", "desc": "Direct access to Solana blockchain. No intermediaries, no data manipulation." },
+    { "step": "02", "title": "Apply Risk Rules", "desc": "Transparent algorithms analyze mint authority, liquidity, holder distribution, and contract behavior." },
+    { "step": "03", "title": "Generate Score", "desc": "Explainable risk scoring based on verifiable on-chain metrics and historical patterns." },
+    { "step": "04", "title": "Deliver Warnings", "desc": "Clear, actionable insights with specific risk factors and recommendations." }
+  ],
+  "utility": [
+    { "icon": "🔍", "title": "Advanced Scans", "desc": "Pay with HKS for deep analysis, historical data, and custom risk parameters." },
+    { "icon": "🔒", "title": "Stake for Premium", "desc": "Lock HKS tokens to access unlimited scans, priority support, and early features." },
+    { "icon": "🗳️", "title": "Governance Voting", "desc": "Shape the platform roadmap, risk parameters, and feature prioritization." },
+    { "icon": "⚡", "title": "API Access", "desc": "Integrate HKS security into wallets, dApps, and exchanges with our developer API." }
+  ],
+  "roadmap": [
+    { "phase": "Phase 1", "title": "Token Risk Scanner", "status": "Live", "desc": "Core risk analysis engine operational with mint authority, liquidity, and holder distribution checks." },
+    { "phase": "Phase 2", "title": "Wallet Integration", "status": "Q2 2025", "desc": "Browser extension and mobile SDK for Phantom, Solflare, and other major Solana wallets." },
+    { "phase": "Phase 3", "title": "dApp Reputation Layer", "status": "Q3 2025", "desc": "Expand beyond tokens to smart contract security analysis and dApp risk scoring." },
+    { "phase": "Phase 4", "title": "Security API & Alerts", "status": "Q4 2025", "desc": "Developer API, real-time monitoring, and automated alert system for exchanges and platforms." }
+  ],
+  "trust": [
+    { "title": "Open Methodology", "desc": "Our risk scoring algorithms are documented and auditable. No secret sauce, just transparent security logic." },
+    { "title": "Explainable Scoring", "desc": "Every risk score comes with detailed reasoning. You understand exactly why a token received its rating." },
+    { "title": "Non-Custodial", "desc": "We never hold, access, or control your funds. HKS is purely informational and educational." },
+    { "title": "Permission-Based", "desc": "Zero wallet access without explicit user permission. Your security is our priority." }
+  ]
+}
