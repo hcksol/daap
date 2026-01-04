@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: 'IBM Plex Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+    :root {
+        /* Core Background Colors */
+        --background: 240 10% 3.9%;
+        --foreground: 150 70% 85%;
+        
+        /* Neon Green - Primary Brand Color */
+        --primary: 150 100% 50%;
+        --primary-foreground: 240 10% 3.9%;
+        --primary-glow: 150 90% 60%;
+        
+        /* Teal - Secondary */
+        --secondary: 180 100% 40%;
+        --secondary-foreground: 240 10% 3.9%;
+        --secondary-glow: 180 90% 50%;
+        
+        /* Purple Accent */
+        --accent: 280 80% 60%;
+        --accent-foreground: 0 0% 98%;
+        --accent-glow: 280 70% 70%;
+        
+        /* Card & UI Elements */
+        --card: 240 10% 8%;
+        --card-foreground: 150 70% 85%;
+        --card-border: 150 100% 50% / 0.1;
+        
+        --popover: 240 10% 8%;
+        --popover-foreground: 150 70% 85%;
+        
+        /* Muted Elements */
+        --muted: 240 10% 15%;
+        --muted-foreground: 150 30% 60%;
+        
+        /* Border & Input */
+        --border: 150 100% 50% / 0.15;
+        --input: 240 10% 15%;
+        --ring: 150 100% 50%;
+        
+        /* Destructive (High Risk Red) */
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        
+        /* Warning (Medium Risk) */
+        --warning: 45 100% 50%;
+        --warning-foreground: 240 10% 3.9%;
+        
+        /* Success (Low Risk) */
+        --success: 150 100% 50%;
+        --success-foreground: 240 10% 3.9%;
+        
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(150 100% 50%) 0%, hsl(180 100% 40%) 100%);
+        --gradient-accent: linear-gradient(135deg, hsl(180 100% 40%) 0%, hsl(280 80% 60%) 100%);
+        --gradient-dark: linear-gradient(180deg, hsl(240 10% 3.9%) 0%, hsl(240 10% 8%) 100%);
+        --gradient-glow: radial-gradient(circle at center, hsl(150 100% 50% / 0.15) 0%, transparent 70%);
+        
+        /* Shadows & Glows */
+        --shadow-neon: 0 0 20px hsl(150 100% 50% / 0.3), 0 0 40px hsl(150 100% 50% / 0.2);
+        --shadow-teal: 0 0 20px hsl(180 100% 40% / 0.3), 0 0 40px hsl(180 100% 40% / 0.2);
+        --shadow-purple: 0 0 20px hsl(280 80% 60% / 0.3), 0 0 40px hsl(280 80% 60% / 0.2);
+        --shadow-card: 0 10px 40px -10px hsl(150 100% 50% / 0.1);
+        --shadow-elevated: 0 20px 60px -15px hsl(150 100% 50% / 0.2);
+        
+        /* Animations */
+        --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+        /* Border Radius */
+        --radius: 0.75rem;
+    }
+    
+    .dark {
+        /* Already dark by default */
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        background-image: radial-gradient(circle at 20% 50%, hsl(150 100% 50% / 0.05) 0%, transparent 50%),
+                          radial-gradient(circle at 80% 80%, hsl(180 100% 40% / 0.05) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+    
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: hsl(var(--background));
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: hsl(var(--primary) / 0.3);
+        border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--primary) / 0.5);
+    }
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+    .text-gradient-primary {
+        background: linear-gradient(135deg, hsl(150 100% 50%), hsl(180 100% 40%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .text-gradient-accent {
+        background: linear-gradient(135deg, hsl(180 100% 40%), hsl(280 80% 60%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .glow-neon {
+        box-shadow: var(--shadow-neon);
+    }
+    
+    .glow-teal {
+        box-shadow: var(--shadow-teal);
+    }
+    
+    .glow-purple {
+        box-shadow: var(--shadow-purple);
+    }
+    
+    .border-glow {
+        border: 1px solid hsl(var(--border));
+        box-shadow: inset 0 0 20px hsl(150 100% 50% / 0.05);
+    }
+    
+    .grid-pattern {
+        background-image: 
+            linear-gradient(hsl(150 100% 50% / 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(150 100% 50% / 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+    }
+    
+    .circuit-lines {
+        background-image: 
+            linear-gradient(90deg, hsl(150 100% 50% / 0.1) 1px, transparent 1px),
+            linear-gradient(180deg, hsl(180 100% 40% / 0.1) 1px, transparent 1px);
+        background-size: 100px 100px;
+    }
+    
+    .animate-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px hsl(150 100% 50% / 0.2), 0 0 20px hsl(150 100% 50% / 0.1);
+        }
+        to {
+            box-shadow: 0 0 20px hsl(150 100% 50% / 0.4), 0 0 40px hsl(150 100% 50% / 0.2);
+        }
+    }
+    
+    .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    
+    .animate-scan {
+        animation: scan 2s ease-in-out;
+    }
+    
+    @keyframes scan {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
